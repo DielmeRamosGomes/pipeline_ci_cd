@@ -1,6 +1,8 @@
 {
+  "scripts": {
+    "test": "jest" 
+  },
   "devDependencies": {
-    "jest": "^30.2.0",
-    "start": "node Calculadora.js"
+    "jest": "^30.2.0"
   }
 }
