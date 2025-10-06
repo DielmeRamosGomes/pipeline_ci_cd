@@ -1,4 +1,4 @@
-// executar o jest com o comando npx jest
+// executar o jest com o comando npm run test
 const somar = require('./Calculadora.js');
 
 // A função test define um caso de teste individual
