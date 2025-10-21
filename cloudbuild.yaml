@@ -1,10 +1,17 @@
+# ----------------------------------------------------------------
+# Seu arquivo cloudbuild.yaml
+# ----------------------------------------------------------------
 steps:
-  # ... seus passos de build (ex: docker build, gcloud run deploy)
+  # 1. Seu passo de build Docker/Buildpacks
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-app', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/sua-app', '.']
+  
+  # 2. Seu passo de deployment
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args: ['gcloud', 'run', 'deploy', 'my-service', '--image', 'gcr.io/$PROJECT_ID/my-app', '--region', 'us-central1']
-# ------------------------------------------------------------------
+    args: ['gcloud', 'run', 'deploy', 'seu-servico', '--image', 'gcr.io/$PROJECT_ID/sua-app', '--region', 'us-central1']
+
+# ----------------------------------------------------------------
+# ADICIONE ESTA SEÇÃO PARA CORRIGIR O ERRO:
+# ----------------------------------------------------------------
 options:
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
-# ------------------------------------------------------------------
